@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "179107877818",
+    "project_id": "notestaker",
+    "storage_bucket": "notestaker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179107877818:android:a3b849e508be6513758383",
+        "android_client_info": {
+          "package_name": "com.example.forms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "179107877818-1frp8du57qje61hscj3ack7cpqo51k9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzW__5lYx_vyMmoSS0Z02sobyc4_UXXy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "179107877818-1frp8du57qje61hscj3ack7cpqo51k9e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "179107877818-cabt98vvp7btbj52v9dvd2t6v6iht0hh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.simple.notestaker"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179107877818:android:35320a8380ee0df5758383",
+        "android_client_info": {
+          "package_name": "com.simple.notestaker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "179107877818-1frp8du57qje61hscj3ack7cpqo51k9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzW__5lYx_vyMmoSS0Z02sobyc4_UXXy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "179107877818-1frp8du57qje61hscj3ack7cpqo51k9e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "179107877818-cabt98vvp7btbj52v9dvd2t6v6iht0hh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.simple.notestaker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
