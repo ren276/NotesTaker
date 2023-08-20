@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart/' show User;
+import 'package:firebase_auth/firebase_auth.dart' show User;
 
 @immutable
 class AuthUser{
