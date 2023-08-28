@@ -25,7 +25,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -54,7 +57,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAzW__5lYx_vyMmoSS0Z02sobyc4_UXXy8',
-    appId: '1:179107877818:android:a3b849e508be6513758383',
+    appId: '1:179107877818:android:2e29bc47e9d2e012758383',
     messagingSenderId: '179107877818',
     projectId: 'notestaker',
     storageBucket: 'notestaker.appspot.com',
@@ -62,21 +65,11 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyA6QwdPOJ524K70c07N0Y8kBO-SKmgHml8',
-    appId: '1:179107877818:ios:4d7c28c6bbb6401a758383',
+    appId: '1:179107877818:ios:a72d31bda04c23ca758383',
     messagingSenderId: '179107877818',
     projectId: 'notestaker',
     storageBucket: 'notestaker.appspot.com',
-    iosClientId: '179107877818-uqg7eu6m9nv7ujqcvsq0fl3kmt4k6e9d.apps.googleusercontent.com',
-    iosBundleId: 'com.example.forms',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyA6QwdPOJ524K70c07N0Y8kBO-SKmgHml8',
-    appId: '1:179107877818:ios:479040ccbb3544b1758383',
-    messagingSenderId: '179107877818',
-    projectId: 'notestaker',
-    storageBucket: 'notestaker.appspot.com',
-    iosClientId: '179107877818-t9nifmuaesr1kqgp70q9jeu5tmona1hd.apps.googleusercontent.com',
-    iosBundleId: 'com.example.forms.RunnerTests',
+    iosClientId: '179107877818-rrva4bkfhn9p7iq9kn1vn1v567i0komd.apps.googleusercontent.com',
+    iosBundleId: 'se.pixolity.mynotes',
   );
 }

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:forms/constants/routes.dart';
-import 'package:forms/services/auth/AuthService.dart';
-import '../services/auth/AuthExceptions.dart';
-import '../utilities/ShowErrorDialog.dart';
+import 'package:forms/services/auth/auth_exceptions.dart';
+import 'package:forms/services/auth/auth_service.dart';
+import 'package:forms/utilities/dialogs/error_dialog.dart';
 
 class LoginView extends StatefulWidget {
-  const LoginView({super.key});
+  const LoginView({Key? key}) : super(key: key);
 
   @override
   State<LoginView> createState() => _LoginViewState();
@@ -33,7 +33,7 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: const Text('Login'),
       ),
       body: Column(
         children: [
@@ -43,7 +43,7 @@ class _LoginViewState extends State<LoginView> {
             autocorrect: false,
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
-              hintText: 'Enter Email',
+              hintText: 'Enter your email here',
             ),
           ),
           TextField(
@@ -52,7 +52,7 @@ class _LoginViewState extends State<LoginView> {
             enableSuggestions: false,
             autocorrect: false,
             decoration: const InputDecoration(
-              hintText: 'Enter Password',
+              hintText: 'Enter your password here',
             ),
           ),
           TextButton(
@@ -60,39 +60,52 @@ class _LoginViewState extends State<LoginView> {
               final email = _email.text;
               final password = _password.text;
               try {
-                AuthService.firebase().logIn(
+                await AuthService.firebase().logIn(
                   email: email,
                   password: password,
                 );
                 final user = AuthService.firebase().currentUser;
                 if (user?.isEmailVerified ?? false) {
-                  //user email is verified
-                  Navigator.of(context)
-                      .pushNamedAndRemoveUntil(notesRoute, (route) => false);
-                } else {
-                  //user not verified email
+                  // user's email is verified
                   Navigator.of(context).pushNamedAndRemoveUntil(
-                      verifyEmailRoute, (route) => false);
+                    notesRoute,
+                    (route) => false,
+                  );
+                } else {
+                  // user's email is NOT verified
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                    verifyEmailRoute,
+                    (route) => false,
+                  );
                 }
               } on UserNotFoundAuthException {
-                await showErrorDialog(context, 'User not found');
+                await showErrorDialog(
+                  context,
+                  'User not found',
+                );
               } on WrongPasswordAuthException {
-                await showErrorDialog(context, 'Wrong password');
+                await showErrorDialog(
+                  context,
+                  'Wrong credentials',
+                );
               } on GenericAuthException {
                 await showErrorDialog(
                   context,
-                  'Authentication Error',
+                  'Authentication error',
                 );
               }
             },
             child: const Text('Login'),
           ),
           TextButton(
-              onPressed: () {
-                Navigator.of(context)
-                    .pushNamedAndRemoveUntil(registerRoute, (route) => false);
-              },
-              child: Text("Not Registered yet ? Register Here !")),
+            onPressed: () {
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                registerRoute,
+                (route) => false,
+              );
+            },
+            child: const Text('Not registered yet? Register here!'),
+          )
         ],
       ),
     );
