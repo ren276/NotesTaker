@@ -1,9 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:forms/services/auth/AuthExceptions.dart';
-import 'package:forms/services/auth/AuthProvider.dart';
-import 'package:forms/services/auth/AuthUser.dart';
+import 'package:forms/services/auth/auth_user.dart';
+import 'package:forms/services/auth/auth_provider.dart';
+import 'package:forms/services/auth/auth_exceptions.dart';
 import 'package:flutter_test/src/test_compat.dart';
 
 void main() {
