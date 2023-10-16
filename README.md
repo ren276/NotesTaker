@@ -1,4 +1,4 @@
-# NotesTaker App with Authentication - README
+# NotesTaker App with Authentication and BLOC Architecture
 
 ## Table of Contents
 
@@ -82,4 +82,3 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-Feel free to customize this README according to your specific project's needs. Good luck with your **NotesTaker** app! If you have any questions or need further assistance, please don't hesitate to reach out.
